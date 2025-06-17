@@ -8,6 +8,7 @@ import {
     RadioCard,
     VStack,
     Text,
+    Spinner,
 } from "@chakra-ui/react";
 import { BiCheck, BiGlasses } from "react-icons/bi";
 import { toaster } from "../ui/toaster";
@@ -138,7 +139,9 @@ const Quiz = ({
         return (
             <Card.Root width="3xl" size="lg">
                 <Card.Body>
-                    <Card.Title mt="2">Loading Quiz...</Card.Title>
+                    <Center>
+                        <Spinner />
+                    </Center>
                 </Card.Body>
             </Card.Root>
         );
