@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# Rick & Morty Character Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a small web quiz that fetches random characters from the [Rick and Morty API](https://rickandmortyapi.com/) and challenges you to identify them. It is built with **React**, **TypeScript**, **Vite**, **Chakra UI** and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+## How it works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- On start you are presented with an intro card. Press **Start Quiz** to begin.
+- The quiz consists of five random characters. Each question shows an image and some info (origin and current location) as hints.
+- Choose the correct character name from the list of options. You have up to three hints that eliminate two wrong answers.
+- After the last question you see your score and can export a shareable image or restart the quiz.
+- Dark mode is supported via the toggle button in the top‑left corner.
 
-## Expanding the ESLint configuration
+## Running locally
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Install dependencies**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   ```bash
+   npm install
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Start the development server**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   ```bash
+   npm run dev
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   Then open `http://localhost:5173` in your browser.
+
+3. **Other commands**
+
+   - `npm run build` – build a production bundle
+   - `npm run preview` – preview the production build
+   - `npm run lint` – run ESLint on the source files
+
+Node.js 18 or newer is recommended.
+
+## Project structure
+
+The main application lives in [`src/`](src) with the following key pieces:
+
+- [`src/App.tsx`](src/App.tsx) – application shell and page flow
+- [`src/components/sections`](src/components/sections) – Intro, Quiz and Results components
+- [`src/components/ui`](src/components/ui) – UI helpers like theming and toaster
+- [`src/types`](src/types) – TypeScript definitions used across the app
+
+Feel free to explore and modify the code. Have fun!
