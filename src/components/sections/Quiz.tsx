@@ -239,7 +239,6 @@ const Quiz = ({
                             <BiCheck />
                             Submit
                         </Button>
-                        {score}
                     </HStack>
                 </HStack>
             </Card.Footer>
