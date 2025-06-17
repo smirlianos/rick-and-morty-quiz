@@ -117,7 +117,8 @@ const Results = ({
                                             {score} / {totalAnswers}
                                         </Heading>
                                         <Box>
-                                            Try your luck on: https://site.com
+                                            Try your luck on:<br></br>
+                                            https://github.com/smirlianos/rick-and-morty-quiz
                                         </Box>
                                     </VStack>
                                 </Center>
