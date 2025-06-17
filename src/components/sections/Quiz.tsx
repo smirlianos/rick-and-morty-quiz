@@ -217,9 +217,17 @@ const Quiz = ({
                 {/* <Button variant="outline">View</Button> */}
 
                 <HStack justifyContent="space-between" w="100%">
-                    <Badge variant="plain">
-                        Question {questionIndex + 1} out of {TOTAL_QUESTIONS}
-                    </Badge>
+                    <HStack>
+                        <Badge variant="plain">
+                            Question {questionIndex + 1} out of{" "}
+                            {TOTAL_QUESTIONS}
+                        </Badge>
+                        <Badge variant="plain">|</Badge>
+                        <Badge variant="plain">
+                            Score: {score} / {questionIndex}
+                        </Badge>
+                    </HStack>
+
                     <HStack>
                         <Button
                             variant="outline"
